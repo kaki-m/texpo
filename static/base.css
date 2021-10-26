@@ -1,0 +1,130 @@
+.header_logo{
+    text-align:center;
+    left:30%;
+    top:-10px;   
+}
+.header_logo img{
+    width: 30%;
+}
+
+.reg{
+    bottom:0px;
+    display:flex;
+    right:0px;
+}
+
+.reg_text{
+    bottom:0px;
+}
+
+footer{
+    position: fixed;
+    bottom:0px;
+    right:10px;
+}
+
+main{
+    position:absolute;
+    top:20%;
+    left:41%;
+    text-align:center;
+
+}
+
+.search_box{
+    border-radius:20px;
+    width:300%;
+    height:300%;
+}
+
+.icon{
+    height:50px;
+    width:50px;
+}
+
+/* test */
+html,body{
+    height: 100%;/*高さを100%にして描画エリアをとる*/
+  }
+  
+  #particles-js{ 
+    position:fixed;/*描画固定*/
+    z-index:-1;/*描画を一番下に*/
+    width: 100%;
+    height: 100%;
+    background-color:#fafafa;/*背景色*/
+  }
+  
+  .spot{
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:-10;
+      left:0;
+  }
+
+  .post_icon{
+      margin-top:0;
+      position:relative;
+      width:150px;
+      height:40px;
+      display:inline-block;
+      border-radius:3px;
+      margin-left:5px;
+      margin-right:5px;
+
+  }
+
+  #shape{
+      stroke-width:6px;
+      fill:transparent;
+      stroke:#009FFD;
+      stroke-dasharray:85 400;
+      stroke-dashoffset:-220;
+      transition:1s all ease;
+  }
+
+  #text{
+      margin-top:-35px;
+      text-align:center;
+      top:78px;
+      left:20px;
+      position: absolute;
+  }
+
+  #text a{
+      color:white;
+      text-decoration:none;
+      font-weight:100;
+      font-size:1.1em;
+  }
+
+  .post_icon:hover #shape{
+      stroke-dasharray:50 0;
+      stroke-width:3px;
+      stroke-dashoffset:0;
+      stroke:green;
+  }
+
+  .reg{
+      cursor:help;
+  }
+
+.reg::after {
+position: absolute;
+left: 0;
+content: '';
+width: 100%;
+height: 2px;
+background: #000000;
+bottom: 4px; /*アンダーラインが現れ始める位置（aタグの下辺からの高さ）*/
+opacity: 0;
+visibility: hidden;
+transition: 0.3s;
+}
+
+.reg:hover::after {
+visibility: visible;
+bottom: 12px;
+opacity: 1;
+}

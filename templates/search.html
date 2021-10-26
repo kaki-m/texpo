@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block main %}
+<main class="main">
+    <center>
+        <div class="search_form mt-5 mb-5">
+            <form action = "{{url_for('search_pattern')}}" method = "POST" class="search_container">
+                <input name = "Sport" placeholder=" 検索" size="25" class="search_input">
+                <input type ="submit" value = "&#xf002" class="test">
+                <div class="sort_select mt-3">
+                    <select class="search_result_sort" name="sort">
+                        <option value="">並び替え</option>
+                        <option value="like">人気順</option>
+                        <option value="id">新しい順</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div class="search_result">
+                <div class = "not_found"><p>{{notfound}}</p></div>
+                {% for search in search_result %}
+                    <div class="sport_container mb-3" id="{{search[3]}}">
+                        <div id="clon_element">
+                            <div class="text-left ml-4 mt-0 mb-1 sport_name" id="clone_A{{search[3]}}">{{search[1]}}</div>
+                            <!-- マウスホバーで色を変更 -->
+                            <div class="sport text-left ml-4 mb-2">
+                                <h1 class="sport_title sport_pattern" id="clone_B{{search[3]}}"><a href="#" class="more_show">{{search[0]}}</a></h1>
+                            </div>
+                            <div class="sport text-left ml-5 mr-5 pr-5">
+                                <div class="cp_box">
+                                    <label for="cp01"></label>
+                                    <div class="cp_container">
+                                        <p class="sport_contents sport_pattern" id="clone_C{{search[3]}}">{{search[2]}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more_show text-right pb-2 mr-4">
+                                <!--いいねボタン-->
+                                <div class="like">
+                                    <form action="/like" method="POST" class="like_form">
+                                        <button type="submit" name="like" class="like_button" value="{{search[3]}}"><i class="fas fa-thumbs-up"></i> {{search[4]}}</button>
+                                    </form>
+                                    <button class="more_button" type="submit" id="test" name="test" value="{{search[3]}}" Onclick="jsEvent(this.value)">もっと見る<i class="fas fa-angle-right ml-1"></i></button>
+                                </div>
+                                <!-- <button class="more_button" type="submit" id="test" name="test" value="{{search[3]}}" Onclick="jsEvent(this.value)">もっと見る<i class="fas fa-angle-right ml-1"></i></button> -->
+                        </div>
+                    </div>    
+                {% endfor %}
+        </div>
+        <div id="popup" class="popup">
+            <label id="popid">
+            <div class="popup-inner" id="hide">
+              <div id="close-btn" class="close-btn">✖</div>
+                    <div class="more_text_show">
+                        <div class="sport_container">
+                        <div id="pop_A" class="mt-4">
+
+                        </div>
+
+                        <div class="more_sport text-left ml-4 mb-3" id="pop_B">
+
+                        </div>
+
+                        <div class="more_sport text-left ml-5 mb-5 mr-5" id="pop_C">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </label>
+            <div id="bg-black" class="bg-black"></div>
+        </div>
+    </center>
+</main>
+{% endblock %}

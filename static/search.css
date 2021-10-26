@@ -1,0 +1,159 @@
+  .search_container{
+      box-sizing: border-box;
+  }
+  .search_input{
+    border: 1px solid #999;
+    padding: 3px 5px;
+    height: 50px;
+    width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+  }
+  .search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    border: none;
+    background: none;
+    color: #3879D9;
+    outline : none;
+    display: inline-block;
+    vertical-align: middle;
+    position:absolute;
+  }
+  .hr{
+    margin: 0;
+  }
+  .sport_container{
+    border-radius: 10px;
+    width: 40em
+  }
+  .sport_name{
+    font-size: 20px;
+    color: rgba( 50, 50, 50, 0.6);
+    vertical-align: middle;
+    display: flex;
+  }
+  .sport_title{
+    font-size: 25px;
+  }
+  .sport_pattern{
+    margin: 0;
+    text-align: left;
+  }
+  .more_show{
+    color: black;
+  }
+  .more_icon{
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .more_button{
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .search_form{
+    position:absolute;
+    left:-180px;
+  }
+
+  .search_result{
+      position: relative;
+      top: 180px;
+      right: 30%;
+  }
+  .test{
+    width: 10%;
+  }
+  .sort_select{
+    width: 20%;
+    margin-left: 80%;
+  }
+  .popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: .6s;
+  }
+  .popup.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .popup-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .popup-inner img {
+    width: 100%;
+  }
+  .close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .bg-black {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .cp_box *, .cp_box *:before, .cp_box *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .cp_box {
+    position: relative;
+  }
+  .cp_box label {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    cursor: pointer;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.95) 90%);
+  }
+  .cp_box input:checked + label {
+    background: inherit;
+  }
+  .cp_box .cp_container {
+    overflow: hidden;
+    height: 100px;
+  }
+  
+  .like_button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }

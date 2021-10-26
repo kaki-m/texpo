@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block main %}
+    <main>
+        <div class="another_form">
+            <form class="another_textform" action="upload" method="post">
+
+                <div class="formgroup" id="sport_title">
+                    <!-- <label for="Sport_title"></label> -->
+                    <input class = "title_input" type="text" name="title" placeholder="タイトル" required autofocus>
+                </div>
+                
+                <div class="select_formgroup" id="sport_select">
+                    <!-- <label for="Sport_select"></label> -->
+                    <select class = "select_sports" name="sport" required>
+                        <option value="">スポーツ名</option>
+                    {% for sport in sports_name %}
+                        <option value="{{ sport }}">{{ sport }}</option>
+                    {% endfor %}
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                
+                <div class="formgroup" id="sport_textcontents">
+                    <!-- <label for="Sport_textcontents"></label> -->
+                    <textarea class = "desc_input" type="text" name="content" placeholder="説明" cols="30" rows="5" required autofocus></textarea>
+                </div>
+                
+                  <input type="submit" value="Post" />
+
+            </form>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+{% endblock %}
